@@ -43,8 +43,8 @@ const FlashCardEdit = (props) => {
     return (
         <div>
             <Paper elevation={3} sx={{ padding: 2, marginBottom: 2, background: orange[100] }}>
-                <div class={`row ${classes.courseContainer}`} >
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div className={`row ${classes.courseContainer}`} >
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <Box className={classes.flashCardItem}>
                             <Field
                                 name={`${arrayFieldName}.textSource`}
@@ -64,13 +64,13 @@ const FlashCardEdit = (props) => {
                                 sx={{ minWidth: 40 }} />
                         </Box>
                     </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 
                         <Box className={classes.flashCardItem}>
                             <DoubleArrowIcon />
                         </Box>
                     </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
                         <Box className={classes.flashCardItem}>
                             <Field
@@ -81,7 +81,7 @@ const FlashCardEdit = (props) => {
                             />
                         </Box>
                     </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                         <Box className={classes.flashCardItem}>
                             <Button startIcon={<DeleteIcon />} onClick={onDelete} />
                         </Box>

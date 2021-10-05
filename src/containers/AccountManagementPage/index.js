@@ -41,15 +41,15 @@ const AccountManagementPage = (props) => {
         });
     }
     return (
-        <div class={`container-fluid ${classes.container}`}>
+        <div className={`container-fluid ${classes.container}`}>
 
-            <div class="row" >
+            <div className="row" >
 
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 </div>
-                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
 
-                    <div class={`row ${classes.searchPanel}`}>
+                    <div className={`row ${classes.searchPanel}`}>
 
                         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                             <SearchIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
@@ -61,7 +61,7 @@ const AccountManagementPage = (props) => {
                             </Button>
                         </Box>
                     </div>
-                    <div class={`row ${classes.accountGridPanel}`}>
+                    <div className={`row ${classes.accountGridPanel}`}>
                         <div>Admin Page</div>
                     </div>
                 </div>

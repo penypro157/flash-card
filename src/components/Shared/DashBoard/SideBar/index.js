@@ -57,7 +57,7 @@ class SideBar extends Component {
         var { sideBarPosition } = this.props.dashBoard;
         return (
             <Drawer
-                anchor={sideBarPosition}
+                anchor={"left"}
                 open={Boolean(sideBarPosition)}
                 onClose={this.toggleDrawer(false)}
                 SlideProps={{ direction: SideBarPosition.RIGHT }}

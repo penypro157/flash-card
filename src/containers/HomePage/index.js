@@ -32,7 +32,7 @@ const HomePage = (props) => {
     var openSetCard = setCardDiaglog.open;
     useEffect(() => {
         fetchData();
-    });
+    },[]);
     const addCourse = () => {
         toggleCourseDialog(true);
         setIsEditCourse(false);
@@ -107,7 +107,7 @@ const HomePage = (props) => {
             console.log(item.setList);
             return (
 
-                <div class={`row ${classes.courseListPanel}`}>
+                <div className={`row ${classes.courseListPanel}`}>
                     <Card sx={{ minWidth: 275 }}>
                         <CardContent>
                             <Course key={index} course={{ courseName: item.courseName, courseId: item.courseId }}
@@ -164,20 +164,20 @@ const HomePage = (props) => {
                 <Set key={index} setCard={item} total={item.totalCard} onEdit={editSetCard} onDelete={confirmDeleteSetCard} />
             )
         })
-        return (<div class={`row ${classes.setListPanel}`}>
+        return (<div className={`row ${classes.setListPanel}`}>
             {result}
         </div>)
     }
     return (
-        <div class={`container-fluid ${classes.container}`}>
+        <div className={`container-fluid ${classes.container}`}>
 
-            <div class="row" >
+            <div className="row" >
 
-                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
-                    <div class="row">
+                    <div className="row">
                         <Box className={classes.addCourseBtn}>
                             <Button color="info" variant="contained" type="submit" onClick={addCourse} startIcon={<AddIcon />} >
                                 Add Course
@@ -187,7 +187,7 @@ const HomePage = (props) => {
 
                     {showCourseList(courseList)}
                 </div>
-                <div class="col-xs-3 col-sm-9 col-md-9 col-lg-9">
+                <div className="col-xs-3 col-sm-9 col-md-9 col-lg-9">
                 </div>
 
             </div>

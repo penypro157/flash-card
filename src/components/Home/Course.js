@@ -19,18 +19,18 @@ const Course = (props) => {
     return (
         <div>
             <Paper elevation={3} sx={{padding : 2,marginBottom:2, background : orange[100]}}>
-                <div class={`row ${classes.courseContainer}`} >
+                <div className={`row ${classes.courseContainer}`} >
 
-                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                    <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
 
                         <Button color="info" variant="text" size="small" startIcon={<PlayCircleOutlineIcon />} sx={{ minWidth: 40 }} />
                     </div>
 
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                         <Typography variant="h5" className={classes.courseTitle}>{course.courseName}</Typography>
 
                     </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
                         <Box className={classes.actionButton}>
                         <Button color="info"
@@ -58,7 +58,7 @@ const Course = (props) => {
                                     onClick={() => onDelete(course)} />
                         </Box>
                     </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 
                         <Typography variant="p" className={classes.total}>{`Total: ${total}`}</Typography>
                     </div>

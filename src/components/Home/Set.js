@@ -18,26 +18,26 @@ const Set = (props) => {
     console.log(props);
     return (
         <Paper elevation={3} sx={{ marginBottom: 2, background: blue[100], paddingTop: 4 }}>
-            <div class={`row ${classes.courseContainer}`} >
+            <div className={`row ${classes.courseContainer}`} >
 
-                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1">
 
                     <Button color="info" variant="text" size="small" startIcon={<PlayCircleOutlineIcon />} sx={{ minWidth: 40 }} />
                 </div>
 
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
                     <Typography variant="p"><NavLink to={`/edit-set/${setCard.setId}`} >{setCard.setName}</NavLink></Typography>
 
                 </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 
                     <Box className={classes.actionButton}>
                         <Button color="info" title="Edit Set" variant="text" size="small" type="submit" onClick={() => onEdit(setCard)} startIcon={<ModeEditIcon />} sx={{ minWidth: 40 }} />
                         <Button color="info" title="Delete Set" variant="text" size="small" startIcon={<DeleteIcon />} onClick={() => onDelete(setCard)} sx={{ minWidth: 40 }} />
                     </Box>
                 </div>
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div className="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 
                     <Typography variant="p" className={classes.total}>{`Total: ${total}`}</Typography>
                 </div>

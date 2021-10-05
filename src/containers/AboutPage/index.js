@@ -20,7 +20,7 @@ function AboutPage(props) {
 
             <div className={`row ${classes.aboutContainer}`}>
 
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <div>
                         <Typography  component="p" fontFamily="cursive">
                             Product of HuyLee
