@@ -32,7 +32,7 @@ const HomePage = (props) => {
     var openSetCard = setCardDiaglog.open;
     useEffect(() => {
         fetchData();
-    }, []);
+    });
     const addCourse = () => {
         toggleCourseDialog(true);
         setIsEditCourse(false);
