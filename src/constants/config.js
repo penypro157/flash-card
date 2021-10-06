@@ -1,4 +1,4 @@
-export const API_URL = 'https://localhost:44359'
+export const API_URL = 'https://huyleapi.azurewebsites.net'
 export const API_TRANSLATE_URL = 'https://libretranslate.com/translate'
 export const MessageType = {
     WARNING: "WARNING",
