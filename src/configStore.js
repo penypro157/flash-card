@@ -7,7 +7,7 @@ const sagaMiddleWare = createSagaMiddleware();
 const configStore = () => {
     const middleWare = [thunk,sagaMiddleWare];
     const enhancers = [applyMiddleware(...middleWare)]
-    var store = createStore(reducer, compose(...enhancers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+    var store = createStore(reducer, compose(...enhancers));
     sagaMiddleWare.run(rootSaga)
     return store;
 }
