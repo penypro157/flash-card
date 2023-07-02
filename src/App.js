@@ -10,6 +10,7 @@ import { ToastContainer } from 'react-toastify';
 function App() {
   var showRouteList = (routeList) => {
     var result = null;
+    var test = 1
     result = routeList.map((item, index) => {
       if (item.isAuthentication) {
         return (
