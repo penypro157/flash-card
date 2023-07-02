@@ -6,11 +6,11 @@ import { ThemeProvider } from '@mui/material';
 import routeList from './router';
 import customTheme from './theme/index';
 import { ToastContainer } from 'react-toastify';
+import {GoogleOAuthProvider} from '@react-oauth/google'
 
 function App() {
   var showRouteList = (routeList) => {
     var result = null;
-    var test = 1
     result = routeList.map((item, index) => {
       if (item.isAuthentication) {
         return (
@@ -25,6 +25,7 @@ function App() {
   }
   return (
     <div>
+    <GoogleOAuthProvider clientId="100418033395-mpinsjap19a1ejac8q0677g91cob88i3.apps.googleusercontent.com">
       <BrowserRouter>
         <ThemeProvider theme={customTheme} >
           {/* <GlobalLoading test={this.x} /> */}
@@ -35,6 +36,7 @@ function App() {
           </Switch>
         </ThemeProvider>
       </BrowserRouter>
+    </GoogleOAuthProvider>
     </div>
   );
 }

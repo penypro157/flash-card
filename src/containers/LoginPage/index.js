@@ -8,6 +8,7 @@ import { style } from './style'
 import { withStyles } from '@mui/styles';
 import { authenticationService } from '../../actionServices/AuthenticationService';
 import * as message from './../../constants/message'
+import LoginGoogleComponent from '../../components/LoginForm/loginGoogle'
 
 LoginPage.propTypes = {
 
@@ -19,6 +20,9 @@ function LoginPage(props) {
     if (authenticationService.currentUser) {
         props.history.push('/');
     }
+
+
+
     const submitLogin = (data) => {
         var { userName, passWord } = data;
         return authenticationService.login(userName, passWord)
@@ -41,6 +45,29 @@ function LoginPage(props) {
                 }
             });
     }
+
+    const responseMessage = async (response) => {
+        return authenticationService.handleGooleAuthorize(response)
+        .then(data => {
+            debugger
+            const { from } = props.location.state || { from: { pathname: "/" } };
+            window.location.reload(true);
+            props.history.push(from);
+        }).catch(err => {
+            if (err.response) {
+                if ([401, 400].indexOf(err.response.status) !== -1) {
+                    throw new SubmissionError({
+                        _error: message.LOGIN_INVALID_ACCOUNT
+                    })
+                }
+            } else {
+                throw new SubmissionError({
+                    _error: message.SERVER_FAIL
+                })
+            }
+        });
+    }
+
     return (
         <div className={classes.container}>
             <Container fixed maxWidth="md" className={classes.form} >
@@ -50,6 +77,7 @@ function LoginPage(props) {
                             <Typography variant="h5">Sign-In</Typography>
                         </Box>
                         <LoginForm onSubmitLogin={submitLogin} />
+                        <LoginGoogleComponent responseMessage={responseMessage}/>
                     </CardContent>
                     <CardActions>
                     </CardActions>

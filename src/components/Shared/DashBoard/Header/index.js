@@ -1,5 +1,5 @@
 
-import { AppBar, Box, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, IconButton, Menu, MenuItem, Toolbar, Typography, Avatar } from '@mui/material'
 import { withStyles } from '@mui/styles'
 import { Component, useState } from 'react';
 import { style } from './style';
@@ -14,7 +14,7 @@ const Header = (props) => {
     var handleClose = (event) => {
         setAnchorEl(null);
     };
-    var { onMenuClick, title } = props;
+    var { onMenuClick, title, user } = props;
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -38,10 +38,11 @@ const Header = (props) => {
                         aria-label="account of current user"
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
+                        
                         onClick={handleMenu}
                         color="inherit"
                     >
-                        <AccountCircle />
+                    {user ? <Avatar alt={user.name} src={user.picture} /> :  <AccountCircle />}
                     </IconButton>
                     <Menu
                         id="menu-appbar"

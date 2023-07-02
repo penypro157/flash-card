@@ -14,7 +14,7 @@ const Dashboard = (props) => {
     const { children, title } = props;
     return (
         <div>
-            <Header title={title} onMenuClick={toggleSideBar} />
+            <Header title={title} onMenuClick={toggleSideBar}  {...props}/>
             <SideBar />
             {children}
         </div>

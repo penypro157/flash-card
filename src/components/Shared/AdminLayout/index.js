@@ -15,7 +15,7 @@ const AdminLayoutRoute = (props) => {
                 return <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
             }    
             return (
-                <DashBoard title={name}>
+                <DashBoard title={name} user={currentUser}>
                     <YourComponent />
                 </DashBoard>)
         }} />
